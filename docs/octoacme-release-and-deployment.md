@@ -10,10 +10,13 @@ Standardize how OctoAcme releases features to production to reduce risk and impr
 
 ## Pre-release requirements
 - All acceptance criteria met and PRs merged
+- All items in scope meet the [Definition of Done](./octoacme-definition-of-done.md)
 - Passing CI and security scans
-- Release notes drafted
-- Rollback / mitigation plan documented
-- Smoke tests prepared
+- Release notes drafted (owner: **Developer** drafts; **Project Manager** approves)
+- Rollback / mitigation plan documented (owner: **DevOps Engineer**)
+- Smoke tests prepared and signed off by **QA Lead**
+- No open blocking Issues in the [RAID Log](./octoacme-raid-log-template.md)
+- Deployment readiness confirmed by **DevOps Engineer** and **QA Lead**
 
 ## Deployment Checklist
 - [ ] Deployment window scheduled (if needed)
@@ -25,9 +28,11 @@ Standardize how OctoAcme releases features to production to reduce risk and impr
 
 ## Rollback & Incident Playbook
 - If a deployment fails or causes a critical issue:
-  - Trigger incident response and notify on-call
-  - Rollback to last known-good release if necessary
-  - Triage root cause and capture action items
+  - **DevOps Engineer** triggers incident response and notifies on-call
+  - **Project Manager** coordinates stakeholder communication
+  - **DevOps Engineer** executes rollback to last known-good release if necessary
+  - **Developer** and **QA Lead** triage root cause and capture action items
+  - Record the incident as an Issue in the [RAID Log](./octoacme-raid-log-template.md)
 
 ## Release Notes Template
 - Release name / number:
